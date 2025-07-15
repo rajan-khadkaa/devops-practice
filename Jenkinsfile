@@ -1,17 +1,37 @@
+
+//sh for linux -ubuntu
 pipeline {
     agent any
     stages {
         stage('Build') {
             steps {
-                bat 'echo "Hello World"'
-                bat '''
-                    echo "Multiline shell steps works too"
-                    dir
+                sh 'echo "Hello from Jenkins in Ubuntu!"'
+                sh '''
+                    echo "Multiline shell steps work too"
+                    ls -lah
                 '''
             }
         }
     }
 }
+
+
+
+//bat for windows
+// pipeline {
+//     agent any
+//     stages {
+//         stage('Build') {
+//             steps {
+//                 bat 'echo "Hello World"'
+//                 bat '''
+//                     echo "Multiline shell steps works too"
+//                     dir
+//                 '''
+//             }
+//         }
+//     }
+// }
 
 
 // pipeline {
